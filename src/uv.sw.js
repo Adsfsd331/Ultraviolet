@@ -123,7 +123,7 @@ class UVServiceWorker extends Ultraviolet.EventEmitter {
 				: requestCtx.url;
 
 			const response = await this.bareClient.fetch(fetchedURL, {
-				headers: requestCtx.headers,
+				headers: Object.entries(requestCtx.headers),
 				method: requestCtx.method,
 				body: requestCtx.body,
 				credentials: requestCtx.credentials,
